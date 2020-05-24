@@ -96,7 +96,7 @@ RUBY_GEMS=(
 )
 sudo gem install ${RUBY_GEMS[@]}
 
-APPS={
+APPS=(
 	441258766 
 	409183694 
 	408981434 
@@ -112,7 +112,7 @@ APPS={
 	937984704
 	634148309
 	497799835
-}
+)
 
 # APP LIST: 
 # 441258766 Magnet
