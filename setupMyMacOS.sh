@@ -41,7 +41,7 @@ echo "Cleaning up..."
 brew cleanup
 
 echo "Installing cask..."
-brew install caskroom/cask/brew-cask
+brew install homebrew/cask-cask
 
 CASKS=(
     dropbox
@@ -78,7 +78,7 @@ CASKS=(
 )
 
 echo "Installing fonts..."
-brew tap caskroom/fonts
+brew tap homebrew/cask-fonts
 FONTS=(
     font-roboto
     font-clear-sans
