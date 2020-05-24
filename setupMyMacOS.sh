@@ -154,4 +154,4 @@ ssh-add -K ~/.ssh/personal-ssh-key
 
 echo "MacOS Setup complete"
 echo "Please use Disk Utility to create the /Volumes/git project workspace"
-echo "Please copy and paste ssh key "~/.ssh/personal-ssh-key.pub" into github accounts as needed
+echo "Please copy and paste ssh key into github accounts as needed
