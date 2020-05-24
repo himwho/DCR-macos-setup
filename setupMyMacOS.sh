@@ -19,6 +19,7 @@ brew update
 
 echo "Install zsh..."
 brew install zsh zsh-completions zsh-syntax-highlighting zsh-autosuggestions
+source ~/.zshrc
 
 PACKAGES=(
     ffmpeg
@@ -75,6 +76,8 @@ CASKS=(
     transmit
     cycling74-max
     skype
+    loopback
+    audio-hijack
 )
 
 echo "Installing fonts..."
