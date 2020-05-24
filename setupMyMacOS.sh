@@ -146,6 +146,8 @@ defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 # Disable "natural" scroll
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
+echo "MacOS Setup complete"
+
 echo "Do you want to create your ~/.ssh/personal-ssh-key SSH key?"
 select yn in "Yes" "No"; do
     case $yn in
@@ -161,5 +163,4 @@ select yn in "Yes" "No"; do
     esac
 done
 
-echo "MacOS Setup complete"
 echo "Please use Disk Utility to create the /Volumes/git project workspace"
