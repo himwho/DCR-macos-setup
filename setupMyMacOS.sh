@@ -80,8 +80,12 @@ CASKS=(
     audio-hijack
 )
 
+echo "Installing cask apps..."
+brew cask install ${CASKS[@]}
+
 echo "Installing fonts..."
 brew tap homebrew/cask-fonts
+
 FONTS=(
     font-roboto
     font-clear-sans
@@ -90,7 +94,7 @@ brew cask install ${FONTS[@]}
 
 echo "Installing Python packages..."
 PYTHON_PACKAGES=(
-	
+	mutagen
 )
 sudo pip install ${PYTHON_PACKAGES[@]}
 
@@ -99,9 +103,6 @@ RUBY_GEMS=(
     cocoapods
 )
 sudo gem install ${RUBY_GEMS[@]}
-
-echo "Installing cask apps..."
-brew cask install ${CASKS[@]}
 
 APPS={
 	441258766 
