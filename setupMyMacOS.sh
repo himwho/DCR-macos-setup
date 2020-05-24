@@ -18,9 +18,9 @@ fi
 brew update
 
 echo "Install zsh..."
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 brew install zsh zsh-completions zsh-syntax-highlighting zsh-autosuggestions
 source ~/.zshrc
-echo 'export PATH="/usr/local/sbin:$PATH"' >> ~/.zshrc
 
 PACKAGES=(
     ffmpeg
@@ -132,7 +132,7 @@ APPS=(
 # 497799835 Xcode
 
 echo "Install Mac App Store (mas)..."
-brew cask install ${APPS[@]}
+mas install ${APPS[@]}
 
 echo "Configuring OSX..."
 
@@ -146,12 +146,20 @@ defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 # Disable "natural" scroll
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
-echo "Initializing SSH..."
-ssh-keygen -t rsa -b 4096 -C "dylan@dylanjmarcus.com"
-eval "$(ssh-agent -s)"
-touch ~/.ssh/config
-ssh-add -K ~/.ssh/personal-ssh-key
+echo "Do you want to create your ~/.ssh/personal-ssh-key SSH key?"
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes ) 
+            echo "Initializing SSH..."
+            ssh-keygen -t rsa -b 4096 -C "dylan@dylanjmarcus.com"
+            eval "$(ssh-agent -s)"
+            touch ~/.ssh/config
+            ssh-add -K ~/.ssh/personal-ssh-key
+            echo "Please copy and paste ssh key into github accounts as needed"
+            break;;
+        No ) break;;
+    esac
+done
 
 echo "MacOS Setup complete"
 echo "Please use Disk Utility to create the /Volumes/git project workspace"
-echo "Please copy and paste ssh key into github accounts as needed
