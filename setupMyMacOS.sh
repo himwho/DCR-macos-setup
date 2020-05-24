@@ -27,7 +27,9 @@ PACKAGES=(
     git
     npm
     python
+    pip
     python3
+    pip3
     wget
     neofetch
     cmake
@@ -43,8 +45,6 @@ echo "Cleaning up..."
 brew cleanup
 
 echo "Installing cask..."
-brew install homebrew/cask-cask
-
 CASKS=(
     dropbox
     firefox
@@ -96,6 +96,8 @@ RUBY_GEMS=(
 )
 sudo gem install ${RUBY_GEMS[@]}
 
+echo "Install Mac App Store (mas)..."
+
 APPS=(
 	441258766 
 	409183694 
@@ -113,6 +115,7 @@ APPS=(
 	634148309
 	497799835
 )
+mas install ${APPS[@]}
 
 # APP LIST: 
 # 441258766 Magnet
@@ -130,9 +133,6 @@ APPS=(
 # 634148309 Logic Pro X
 # 1445242832 Storyist
 # 497799835 Xcode
-
-echo "Install Mac App Store (mas)..."
-mas install ${APPS[@]}
 
 echo "Configuring OSX..."
 
@@ -164,3 +164,4 @@ select yn in "Yes" "No"; do
 done
 
 echo "Please use Disk Utility to create the /Volumes/git project workspace"
+echo "Change your ~/.zshrc theme to ys"
