@@ -20,6 +20,7 @@ brew update
 echo "Install zsh..."
 brew install zsh zsh-completions zsh-syntax-highlighting zsh-autosuggestions
 source ~/.zshrc
+echo 'export PATH="/usr/local/sbin:$PATH"' >> ~/.zshrc
 
 PACKAGES=(
     ffmpeg
@@ -82,15 +83,6 @@ CASKS=(
 
 echo "Installing cask apps..."
 brew cask install ${CASKS[@]}
-
-echo "Installing fonts..."
-brew tap homebrew/cask-fonts
-
-FONTS=(
-    font-roboto
-    font-clear-sans
-)
-brew cask install ${FONTS[@]}
 
 echo "Installing Python packages..."
 PYTHON_PACKAGES=(
