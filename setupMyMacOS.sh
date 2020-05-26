@@ -22,6 +22,12 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 brew install zsh zsh-completions zsh-syntax-highlighting zsh-autosuggestions
 source ~/.zshrc
 
+TAPS=(
+    heroku/brew
+)
+echo "Tapping formulae..."
+brew tap ${TAPS[@]}
+
 PACKAGES=(
     ffmpeg
     git
@@ -36,8 +42,9 @@ PACKAGES=(
     mas
     awscli
     go
+    rust
+    heroku
 )
-
 echo "Installing packages..."
 brew install ${PACKAGES[@]}
 
@@ -80,24 +87,36 @@ CASKS=(
     loopback
     audio-hijack
 )
-
 echo "Installing cask apps..."
 brew cask install ${CASKS[@]}
 
 echo "Installing Python packages..."
+
 PYTHON_PACKAGES=(
 	mutagen
+    tensorflow
+    boto3
+    jwt
+    matplotlib
+    serverless
+    chalice
+    liz
+    librosa
+    numpy
+    scipy
 )
+sudo pip3 install ${PYTHON_PACKAGES[@]}
 sudo pip install ${PYTHON_PACKAGES[@]}
 
 echo "Installing Ruby gems"
 RUBY_GEMS=(
     cocoapods
+    bundler
+    jekyll
 )
 sudo gem install ${RUBY_GEMS[@]}
 
 echo "Install Mac App Store (mas)..."
-
 APPS=(
 	441258766 
 	409183694 
