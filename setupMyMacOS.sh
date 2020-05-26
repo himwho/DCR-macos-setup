@@ -93,7 +93,7 @@ brew cask install ${CASKS[@]}
 echo "Installing Python packages..."
 
 PYTHON_PACKAGES=(
-	mutagen
+    mutagen
     tensorflow
     boto3
     jwt
