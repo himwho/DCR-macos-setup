@@ -44,6 +44,7 @@ PACKAGES=(
     go
     rust
     heroku
+    gti
 )
 echo "Installing packages..."
 brew install ${PACKAGES[@]}
@@ -86,6 +87,7 @@ CASKS=(
     skype
     loopback
     audio-hijack
+    licecap
 )
 echo "Installing cask apps..."
 brew cask install ${CASKS[@]}
