@@ -45,6 +45,7 @@ PACKAGES=(
     rust
     heroku
     gti
+    jq
 )
 echo "Installing packages..."
 brew install ${PACKAGES[@]}
@@ -110,6 +111,14 @@ PYTHON_PACKAGES=(
 sudo pip3 install ${PYTHON_PACKAGES[@]}
 sudo pip install ${PYTHON_PACKAGES[@]}
 
+echo "Installing node packages (npm)"
+NPM_PACKAGES=(
+    bower
+    grunt-cli
+
+    )
+npm install -g ${NPM_PACKAGES[@]}
+
 echo "Installing Ruby gems"
 RUBY_GEMS=(
     cocoapods
@@ -135,6 +144,7 @@ APPS=(
 	937984704
 	634148309
 	497799835
+    1450874784
 )
 mas install ${APPS[@]}
 
@@ -154,6 +164,7 @@ mas install ${APPS[@]}
 # 634148309 Logic Pro X
 # 1445242832 Storyist
 # 497799835 Xcode
+# 1450874784 Transporter (macos dev)
 
 echo "Configuring OSX..."
 
@@ -183,6 +194,27 @@ select yn in "Yes" "No"; do
         No ) break;;
     esac
 done
+
+echo "Setting up locahost https (https-server)"
+cd ~/
+mkdir .localhost-ssl
+sudo openssl genrsa -out ~/.localhost-ssl/localhost.key 2048
+sudo openssl req -new -x509 -key ~/.localhost-ssl/localhost.key -out ~/.localhost-ssl/localhost.crt -days 3650 -subj /CN=localhost
+sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain ~/.localhost-ssl/localhost.crt
+npm install -g http-server
+echo " 
+function https-server() {
+  http-server --ssl --cert ~/.localhost-ssl/localhost.crt --key ~/.localhost-ssl/localhost.key
+}
+" >> ~/.zshrc
+echo "You're ready to use https on localhost 💅"
+
+echo " 
+export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/opt/python/libexec/bin:$PATH
+" >> ~/.zshrc
+source ~/.bash_profile
+source ~/.zshrc
 
 echo "Please use Disk Utility to create the /Volumes/git project workspace"
 echo "Change your ~/.zshrc theme to ys"
