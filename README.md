@@ -1,2 +1,2 @@
-# DCR-macos-setup
+# QDept-macos-setup
 Install setup for new macos environments
