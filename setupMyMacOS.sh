@@ -64,28 +64,20 @@ CASKS=(
     sublime-text
     visual-studio-code
     sourcetree
-    anaconda
-    sequel-pro
-    ltspice
-    inkscape
     reaper
     arduino
     unity-hub
-    discord
     find-any-file
     ilok-license-manager
     keka
-    librecad
     pacifist
     pd
-    plex
     processing
     skype
     steam
     transmission
     transmit
     cycling74-max
-    skype
     loopback
     audio-hijack
     licecap
@@ -115,7 +107,6 @@ echo "Installing node packages (npm)"
 NPM_PACKAGES=(
     bower
     grunt-cli
-
     )
 npm install -g ${NPM_PACKAGES[@]}
 
@@ -123,7 +114,6 @@ echo "Installing Ruby gems"
 RUBY_GEMS=(
     cocoapods
     bundler
-    jekyll
 )
 sudo gem install ${RUBY_GEMS[@]}
 
@@ -133,18 +123,13 @@ APPS=(
 	409183694 
 	408981434 
 	1274495053
-	461369673 
-	443987910  
+	461369673
+	443987910
 	404167677
-	904280696
 	409201541
 	409203825
-	1458220908
-	1445242832
-	937984704
 	634148309
 	497799835
-    1450874784
 )
 mas install ${APPS[@]}
 
@@ -172,28 +157,13 @@ echo "Configuring OSX..."
 #defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 # Enable tap-to-click
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
-defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+#defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+#defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
 # Disable "natural" scroll
-defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
+#defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
 echo "MacOS Setup complete"
-
-echo "Do you want to create your ~/.ssh/personal-ssh-key SSH key?"
-select yn in "Yes" "No"; do
-    case $yn in
-        Yes ) 
-            echo "Initializing SSH..."
-            ssh-keygen -t rsa -b 4096 -C "dylan@dylanjmarcus.com"
-            eval "$(ssh-agent -s)"
-            touch ~/.ssh/config
-            ssh-add -K ~/.ssh/personal-ssh-key
-            echo "Please copy and paste ssh key into github accounts as needed"
-            break;;
-        No ) break;;
-    esac
-done
 
 echo "Setting up locahost https (https-server)"
 cd ~/
@@ -216,5 +186,5 @@ export PATH=/usr/local/opt/python/libexec/bin:$PATH
 source ~/.bash_profile
 source ~/.zshrc
 
-echo "Please use Disk Utility to create the /Volumes/git project workspace"
+echo "Please use Disk Utility to create the /Volumes/git project workspace for git development if you need it"
 echo "Change your ~/.zshrc theme to ys"
