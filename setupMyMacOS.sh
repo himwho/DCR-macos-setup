@@ -91,7 +91,7 @@ CASKS=(
     licecap
 )
 echo "Installing cask apps..."
-brew cask install ${CASKS[@]}
+brew install --cask ${CASKS[@]}
 
 echo "Installing Python packages..."
 
@@ -115,7 +115,6 @@ echo "Installing node packages (npm)"
 NPM_PACKAGES=(
     bower
     grunt-cli
-
     )
 npm install -g ${NPM_PACKAGES[@]}
 
@@ -144,7 +143,7 @@ APPS=(
 	937984704
 	634148309
 	497799835
-    1450874784
+        1450874784
 )
 mas install ${APPS[@]}
 
