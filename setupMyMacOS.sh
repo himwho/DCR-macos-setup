@@ -46,6 +46,7 @@ PACKAGES=(
     heroku
     gti
     jq
+    netcdf
 )
 echo "Installing packages..."
 brew install ${PACKAGES[@]}
