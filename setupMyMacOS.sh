@@ -83,7 +83,7 @@ CASKS=(
     licecap
 )
 echo "Installing cask apps..."
-brew cask install ${CASKS[@]}
+brew install --cask ${CASKS[@]}
 
 echo "Installing Python packages..."
 
