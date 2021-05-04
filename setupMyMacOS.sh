@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# My personal fresh-install script
+# QDeptartment's macos fresh-install script
 #
 # DUNGEON OF MANUAL SHAME:
 # (list of apps not handled by package manager and require manual installing)
