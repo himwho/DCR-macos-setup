@@ -31,13 +31,11 @@ brew tap ${TAPS[@]}
 PACKAGES=(
     ffmpeg
     git
-    npm
-    python
-    pip
-    python3
-    pip3
+    nodejs
     wget
     neofetch
+    python
+    python3
     cmake
     mas
     awscli
@@ -71,7 +69,6 @@ CASKS=(
     find-any-file
     ilok-license-manager
     keka
-    pacifist
     pd
     processing
     skype
@@ -82,6 +79,10 @@ CASKS=(
     loopback
     audio-hijack
     licecap
+    adobe-creative-cloud
+    waves-central
+    native-access
+    ableton-live-suite
 )
 echo "Installing cask apps..."
 brew install --cask ${CASKS[@]}
@@ -149,7 +150,6 @@ mas install ${APPS[@]}
 # 1458220908 Markdown Editor
 # 937984704 Amphetamine
 # 634148309 Logic Pro X
-# 1445242832 Storyist
 # 497799835 Xcode
 # 1450874784 Transporter (macos dev)
 
