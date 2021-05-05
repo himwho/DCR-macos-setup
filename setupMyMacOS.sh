@@ -91,7 +91,6 @@ echo "Installing Python packages..."
 
 PYTHON_PACKAGES=(
     mutagen
-    tensorflow
     boto3
     jwt
     matplotlib
