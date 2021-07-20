@@ -176,6 +176,11 @@ defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 # Disable "natural" scroll
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
+# Show volumes on desktop
+defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
+defaults write com.apple.finder ShowRemovableMediasOnDesktop -bool true
+defaults write com.apple.finder ShowMountedServersOnDesktop -bol true
+
 echo "MacOS Setup complete"
 
 echo "Do you want to create your ~/.ssh/personal-ssh-key SSH key?"
