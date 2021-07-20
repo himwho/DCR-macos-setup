@@ -46,6 +46,8 @@ PACKAGES=(
     heroku
     gti
     jq
+    nvm
+    hugo
 )
 echo "Installing packages..."
 brew install ${PACKAGES[@]}
