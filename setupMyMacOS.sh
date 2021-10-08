@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# My personal fresh-install script
+# QDeptartment's macos fresh-install script
 #
 # DUNGEON OF MANUAL SHAME:
 # (list of apps not handled by package manager and require manual installing)
@@ -31,13 +31,11 @@ brew tap ${TAPS[@]}
 PACKAGES=(
     ffmpeg
     git
-    npm
-    python
-    pip
-    python3
-    pip3
+    nodejs
     wget
     neofetch
+    python
+    python3
     cmake
     mas
     awscli
@@ -48,6 +46,7 @@ PACKAGES=(
     jq
     nvm
     hugo
+    netcdf
 )
 echo "Installing packages..."
 brew install ${PACKAGES[@]}
@@ -77,8 +76,6 @@ CASKS=(
     find-any-file
     ilok-license-manager
     keka
-    librecad
-    pacifist
     pd
     plex
     processing
@@ -90,6 +87,10 @@ CASKS=(
     loopback
     audio-hijack
     licecap
+    adobe-creative-cloud
+    waves-central
+    native-access
+    ableton-live-suite
 )
 echo "Installing cask apps..."
 brew install --cask ${CASKS[@]}
@@ -98,7 +99,6 @@ echo "Installing Python packages..."
 
 PYTHON_PACKAGES=(
     mutagen
-    tensorflow
     boto3
     jwt
     matplotlib
@@ -162,7 +162,6 @@ mas install ${APPS[@]}
 # 1458220908 Markdown Editor
 # 937984704 Amphetamine
 # 634148309 Logic Pro X
-# 1445242832 Storyist
 # 497799835 Xcode
 # 1450874784 Transporter (macos dev)
 
@@ -172,33 +171,18 @@ echo "Configuring OSX..."
 #defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 # Enable tap-to-click
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
-defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+#defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+#defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
 # Disable "natural" scroll
-defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
+#defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
 # Show volumes on desktop
-defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
-defaults write com.apple.finder ShowRemovableMediasOnDesktop -bool true
-defaults write com.apple.finder ShowMountedServersOnDesktop -bol true
+#defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
+#defaults write com.apple.finder ShowRemovableMediasOnDesktop -bool true
+#defaults write com.apple.finder ShowMountedServersOnDesktop -bol true
 
 echo "MacOS Setup complete"
-
-echo "Do you want to create your ~/.ssh/personal-ssh-key SSH key?"
-select yn in "Yes" "No"; do
-	case $yn in
-		Yes ) 
-			echo "Initializing SSH..."
-			ssh-keygen -t rsa -b 4096 -C "dylan@dylanjmarcus.com"
-			eval "$(ssh-agent -s)"
-			touch ~/.ssh/config
-			ssh-add -K ~/.ssh/personal-ssh-key
-			echo "Please copy and paste ssh key into github accounts as needed"
-			break;;
-		No ) break;;
-	esac
-done
 
 echo "Setting up locahost https (https-server)"
 cd ~/
