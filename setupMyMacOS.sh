@@ -44,6 +44,8 @@ PACKAGES=(
     heroku
     gti
     jq
+    nvm
+    hugo
     netcdf
 )
 echo "Installing packages..."
@@ -63,13 +65,19 @@ CASKS=(
     sublime-text
     visual-studio-code
     sourcetree
+    anaconda
+    sequel-pro
+    ltspice
+    inkscape
     reaper
     arduino
     unity-hub
+    discord
     find-any-file
     ilok-license-manager
     keka
     pd
+    plex
     processing
     skype
     steam
@@ -115,23 +123,28 @@ echo "Installing Ruby gems"
 RUBY_GEMS=(
     cocoapods
     bundler
+    jekyll
 )
 sudo gem install ${RUBY_GEMS[@]}
 
 echo "Install Mac App Store (mas)..."
 APPS=(
-	441258766 
-	409183694 
-	408981434 
+	441258766
+	409183694
+	408981434
 	1274495053
 	461369673
 	443987910
 	404167677
+	904280696
 	409201541
 	409203825
+	1458220908
+	1445242832
+	937984704
 	634148309
 	497799835
-	962263890
+	1450874784
 )
 mas install ${APPS[@]}
 
@@ -164,6 +177,11 @@ echo "Configuring OSX..."
 # Disable "natural" scroll
 #defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
+# Show volumes on desktop
+#defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
+#defaults write com.apple.finder ShowRemovableMediasOnDesktop -bool true
+#defaults write com.apple.finder ShowMountedServersOnDesktop -bol true
+
 echo "MacOS Setup complete"
 
 echo "Setting up locahost https (https-server)"
@@ -187,5 +205,6 @@ export PATH=/usr/local/opt/python/libexec/bin:$PATH
 source ~/.bash_profile
 source ~/.zshrc
 
-echo "Please use Disk Utility to create the /Volumes/git project workspace for git development if you need it"
+echo "Please use Disk Utility to create the /Volumes/git project workspace"
 echo "Change your ~/.zshrc theme to ys"
+
