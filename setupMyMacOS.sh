@@ -31,10 +31,12 @@ brew tap ${TAPS[@]}
 PACKAGES=(
     ffmpeg
     git
+    git-lfs
     nodejs
     wget
     neofetch
     python
+    pyenv
     python3
     cmake
     mas
@@ -47,6 +49,8 @@ PACKAGES=(
     nvm
     hugo
     netcdf
+    cocoapods
+    zsh-syntax-highlighting
 )
 echo "Installing packages..."
 brew install ${PACKAGES[@]}
@@ -64,10 +68,10 @@ CASKS=(
     spotify
     sublime-text
     visual-studio-code
+    fork
     sourcetree
-    anaconda
     sequel-pro
-    ltspice
+    kicad
     inkscape
     reaper
     arduino
@@ -87,10 +91,10 @@ CASKS=(
     loopback
     audio-hijack
     licecap
-    adobe-creative-cloud
     waves-central
     native-access
     ableton-live-suite
+    fontforge
 )
 echo "Installing cask apps..."
 brew install --cask ${CASKS[@]}
@@ -121,7 +125,6 @@ npm install -g ${NPM_PACKAGES[@]}
 
 echo "Installing Ruby gems"
 RUBY_GEMS=(
-    cocoapods
     bundler
     jekyll
 )
@@ -168,19 +171,19 @@ mas install ${APPS[@]}
 echo "Configuring OSX..."
 
 # Show filename extensions by default
-#defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 # Enable tap-to-click
-#defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
-#defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
 # Disable "natural" scroll
-#defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
+defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
 # Show volumes on desktop
-#defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
-#defaults write com.apple.finder ShowRemovableMediasOnDesktop -bool true
-#defaults write com.apple.finder ShowMountedServersOnDesktop -bol true
+defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
+defaults write com.apple.finder ShowRemovableMediasOnDesktop -bool true
+defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
 
 echo "MacOS Setup complete"
 
