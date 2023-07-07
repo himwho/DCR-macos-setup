@@ -24,6 +24,7 @@ source ~/.zshrc
 
 TAPS=(
     heroku/brew
+    ebu/homebrew-nga
 )
 echo "Tapping formulae..."
 brew tap ${TAPS[@]}
@@ -49,8 +50,11 @@ PACKAGES=(
     nvm
     hugo
     netcdf
+    yasm
     cocoapods
     zsh-syntax-highlighting
+    libadm
+    libbw64
 )
 echo "Installing packages..."
 brew install ${PACKAGES[@]}
