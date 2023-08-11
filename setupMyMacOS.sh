@@ -99,6 +99,7 @@ CASKS=(
     native-access
     ableton-live-suite
     fontforge
+    launchcontrol
 )
 echo "Installing cask apps..."
 brew install --cask ${CASKS[@]}
