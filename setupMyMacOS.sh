@@ -67,6 +67,7 @@ CASKS=(
     dropbox
     firefox
     google-chrome
+    brave-browser
     slack
     vlc
     spotify
