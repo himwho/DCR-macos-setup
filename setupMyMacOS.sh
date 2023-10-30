@@ -101,6 +101,7 @@ CASKS=(
     ableton-live-suite
     fontforge
     launchcontrol
+    iem-plugin-suite
 )
 echo "Installing cask apps..."
 brew install --cask ${CASKS[@]}
