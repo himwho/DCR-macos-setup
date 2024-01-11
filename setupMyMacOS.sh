@@ -65,22 +65,31 @@ brew cleanup
 echo "Installing cask..."
 CASKS=(
     dropbox
+    1password
     firefox
     google-chrome
     brave-browser
     slack
     vlc
+    vox
     spotify
     sublime-text
     visual-studio-code
     fork
     sourcetree
+    fork
     sequel-pro
+    carbon-copy-cloner
+    fontforge
+    launchcontrol
     kicad
     inkscape
-    reaper
+    omnigraffle
+    blender
     arduino
+    sublime-text
     unity-hub
+    epic-games
     discord
     find-any-file
     ilok-license-manager
@@ -92,16 +101,23 @@ CASKS=(
     steam
     transmission
     transmit
+    licecap
+    teamviewer
+    anydesk
+    nordvpn
+    adobe-creative-cloud
+    handbrake
+    reaper
     cycling74-max
     loopback
     audio-hijack
-    licecap
     waves-central
     native-access
     ableton-live-suite
-    fontforge
-    launchcontrol
+    bitwig-studio
+    soundtoys
     iem-plugin-suite
+    paulxstretch
 )
 echo "Installing cask apps..."
 brew install --cask ${CASKS[@]}
@@ -143,8 +159,6 @@ APPS=(
 	409183694
 	408981434
 	1274495053
-	461369673
-	443987910
 	404167677
 	904280696
 	409201541
