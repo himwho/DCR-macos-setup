@@ -88,20 +88,30 @@ CASKS=(
     steam
     transmission
     transmit
+    licecap
+    teamviewer
+    anydesk
+    nordvpn
+    adobe-creative-cloud
     reaper
     cycling74-max
     loopback
     audio-hijack
-    licecap
-    adobe-creative-cloud
     waves-central
     native-access
     ableton-live-suite
+    bitwig-studio
     soundtoys
     iem-plugin-suite
-    teamviewer
-    anydesk
-    nordvpn
+    fabfilter-pro-c
+    fabfilter-pro-g
+    fabfilter-pro-q
+    fabfilter-pro-l
+    fabfilter-pro-ds
+    fabfilter-pro-mb
+    fabfilter-pro-r
+    fabfilter-saturn
+    fabfilter-timeless
 )
 echo "Installing cask apps..."
 brew install --cask ${CASKS[@]}
