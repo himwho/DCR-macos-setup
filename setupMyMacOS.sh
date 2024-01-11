@@ -94,6 +94,7 @@ CASKS=(
     anydesk
     nordvpn
     adobe-creative-cloud
+    handbrake
     reaper
     cycling74-max
     loopback
