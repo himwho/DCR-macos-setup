@@ -57,6 +57,7 @@ brew cleanup
 echo "Installing cask..."
 CASKS=(
     dropbox
+    1password
     firefox
     google-chrome
     google-earth-pro
@@ -154,7 +155,6 @@ APPS=(
 	409183694
 	408981434
 	1274495053
-	443987910
 	404167677
 	904280696
 	409201541
