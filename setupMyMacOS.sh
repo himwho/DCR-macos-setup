@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# QDeptartment's macos fresh-install script
+# macos fresh-install script
 #
 # DUNGEON OF MANUAL SHAME:
 # (list of apps not handled by package manager and require manual installing)
@@ -24,6 +24,7 @@ source ~/.zshrc
 
 TAPS=(
     heroku/brew
+    ebu/homebrew-nga
 )
 echo "Tapping formulae..."
 brew tap ${TAPS[@]}
@@ -31,10 +32,12 @@ brew tap ${TAPS[@]}
 PACKAGES=(
     ffmpeg
     git
+    git-lfs
     nodejs
     wget
     neofetch
     python
+    pyenv
     python3
     cmake
     mas
@@ -47,6 +50,11 @@ PACKAGES=(
     nvm
     hugo
     netcdf
+    yasm
+    cocoapods
+    zsh-syntax-highlighting
+    libadm
+    libbw64
 )
 echo "Installing packages..."
 brew install ${PACKAGES[@]}
@@ -60,19 +68,21 @@ CASKS=(
     1password
     firefox
     google-chrome
-    google-earth-pro
+    brave-browser
     slack
     vlc
     vox
     spotify
     sublime-text
     visual-studio-code
+    fork
     sourcetree
     fork
-    anaconda
     sequel-pro
     carbon-copy-cloner
-    ltspice
+    fontforge
+    launchcontrol
+    kicad
     inkscape
     omnigraffle
     blender
@@ -108,15 +118,6 @@ CASKS=(
     soundtoys
     iem-plugin-suite
     paulxstretch
-    fabfilter-pro-c
-    fabfilter-pro-g
-    fabfilter-pro-q
-    fabfilter-pro-l
-    fabfilter-pro-ds
-    fabfilter-pro-mb
-    fabfilter-pro-r
-    fabfilter-saturn
-    fabfilter-timeless
 )
 echo "Installing cask apps..."
 brew install --cask ${CASKS[@]}
@@ -147,7 +148,6 @@ npm install -g ${NPM_PACKAGES[@]}
 
 echo "Installing Ruby gems"
 RUBY_GEMS=(
-    cocoapods
     bundler
     jekyll
 )
@@ -192,19 +192,19 @@ mas install ${APPS[@]}
 echo "Configuring OSX..."
 
 # Show filename extensions by default
-#defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 # Enable tap-to-click
-#defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
-#defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
 # Disable "natural" scroll
-#defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
+defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
 # Show volumes on desktop
-#defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
-#defaults write com.apple.finder ShowRemovableMediasOnDesktop -bool true
-#defaults write com.apple.finder ShowMountedServersOnDesktop -bol true
+defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
+defaults write com.apple.finder ShowRemovableMediasOnDesktop -bool true
+defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
 
 echo "MacOS Setup complete"
 
