@@ -59,17 +59,22 @@ CASKS=(
     dropbox
     firefox
     google-chrome
+    google-earth-pro
     slack
     vlc
+    vox
     spotify
     sublime-text
     visual-studio-code
     sourcetree
+    fork
     anaconda
     sequel-pro
+    carbon-copy-cloner
     ltspice
     inkscape
-    reaper
+    omnigraffle
+    blender
     arduino
     unity-hub
     discord
@@ -83,6 +88,7 @@ CASKS=(
     steam
     transmission
     transmit
+    reaper
     cycling74-max
     loopback
     audio-hijack
@@ -91,6 +97,10 @@ CASKS=(
     waves-central
     native-access
     ableton-live-suite
+    soundtoys
+    teamviewer
+    anydesk
+    nordvpn
 )
 echo "Installing cask apps..."
 brew install --cask ${CASKS[@]}
@@ -133,7 +143,6 @@ APPS=(
 	409183694
 	408981434
 	1274495053
-	461369673
 	443987910
 	404167677
 	904280696
