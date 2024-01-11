@@ -79,6 +79,7 @@ CASKS=(
     arduino
     sublime-text
     unity-hub
+    epic-games
     discord
     find-any-file
     ilok-license-manager
@@ -106,6 +107,7 @@ CASKS=(
     bitwig-studio
     soundtoys
     iem-plugin-suite
+    paulxstretch
     fabfilter-pro-c
     fabfilter-pro-g
     fabfilter-pro-q
