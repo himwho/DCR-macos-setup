@@ -98,6 +98,7 @@ CASKS=(
     native-access
     ableton-live-suite
     soundtoys
+    iem-plugin-suite
     teamviewer
     anydesk
     nordvpn
