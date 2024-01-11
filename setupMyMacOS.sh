@@ -77,6 +77,7 @@ CASKS=(
     omnigraffle
     blender
     arduino
+    sublime-text
     unity-hub
     discord
     find-any-file
